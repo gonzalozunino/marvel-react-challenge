@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+input,
+select {
+  border: 0.05rem solid var(--dark);
+  padding: 0.2rem 0.5rem;
+  display: block;
+  background-color: var(--white);
+  border-radius: 0.25rem;
+  width: 100%;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 1rem;
+  color: var(--dark);
+  outline: none;
+  transition-property: border;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-function);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary-color);
+}
+
+button {
+  outline: none;
+  line-height: 1;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.275rem 0.5rem;
+  border: 0.05rem solid var(--dark);
+  transition: all var(--transition-duration) var(--transition-function);
+}
+
+a {
+  cursor: pointer;
+  transition: all var(--transition-duration) linear;
+}
+
+label {
+  font-size: var(--font-size-mini);
+}
+
+ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.main-container {
+  padding: 5rem 2rem 0 4rem;
+}

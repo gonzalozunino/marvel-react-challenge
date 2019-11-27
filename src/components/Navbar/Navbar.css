@@ -1,0 +1,32 @@
+.navbar {
+  align-items: center;
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 0.1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.logo {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.3rem;
+  color: var(--white);
+  cursor: pointer;
+  font-weight: var(--font-weight-semi-bold);
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+  transition-duration: var(--transition-duration);
+  transition-property: background-color, box-shadow;
+  transition-timing-function: var(--transition-function);
+}
+
+.logo-img {
+  cursor: pointer;
+  width: 7.5rem;
+}

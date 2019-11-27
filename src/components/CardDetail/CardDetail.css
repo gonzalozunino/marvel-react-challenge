@@ -1,0 +1,10 @@
+.card-detail > .ui.card {
+  margin: 0 auto;
+}
+
+.card-detail > .link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 8;
+  line-height: 1.5;
+}
