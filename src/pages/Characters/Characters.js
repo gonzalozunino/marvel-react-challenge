@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Grid, Segment, Dimmer, Loader } from "semantic-ui-react";
 import InfiniteScroll from "react-infinite-scroller";
 
@@ -9,12 +9,17 @@ import Card from "../../components/Card/Card";
 
 import "./Characters.css";
 
-const Characters = ({ hasMore, characters, isLoading, loadCharacters }) => {
+const Characters = () => {
+  const { hasMore, isLoading, items: characters } = useSelector(
+    state => state.app.characters
+  );
+  const dispatch = useDispatch();
+
   return (
     <InfiniteScroll
       pageStart={0}
       element={"div"}
-      loadMore={page => loadCharacters(page)}
+      loadMore={page => !isLoading && dispatch(loadCharacters(page))}
       hasMore={hasMore}
       threshold={340}
       loader={
@@ -25,29 +30,17 @@ const Characters = ({ hasMore, characters, isLoading, loadCharacters }) => {
     >
       <div className="characters">
         <Grid>
-            {characters.map(char => (
-              <Grid.Column key={char.id} mobile={16} tablet={8} computer={4}>
-                <Segment>
-                  <Card char={char} />
-                </Segment>
-              </Grid.Column>
-            ))}
+          {characters.map(char => (
+            <Grid.Column key={char.id} mobile={16} tablet={8} computer={4}>
+              <Segment>
+                <Card char={char} />
+              </Segment>
+            </Grid.Column>
+          ))}
         </Grid>
       </div>
     </InfiniteScroll>
   );
 };
 
-const mapStateToProps = ({
-  app: {
-    characters: { items, hasMore, isLoading }
-  }
-}) => {
-  return {
-    characters: items,
-    hasMore,
-    isLoading
-  };
-};
-
-export default connect(mapStateToProps, { loadCharacters })(Characters);
+export default Characters;
