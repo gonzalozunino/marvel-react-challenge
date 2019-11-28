@@ -1,4 +1,8 @@
-import { LOAD_CHARACTERS } from "../actionTypes";
+import {
+  LOAD_CHARACTERS,
+  LOAD_CHARACTER,
+  CLOSE_CHARACTER_DETAILS
+} from "../actionTypes";
 
 const initialState = {
   characters: {
@@ -9,6 +13,13 @@ const initialState = {
     count: 12,
     total: 0,
     filter: ""
+  },
+  character: {
+    isModalOpen: false,
+    isLoading: false,
+    current: {},
+    comics: {},
+    isComicsLoaded: false
   }
 };
 
@@ -41,6 +52,23 @@ export default function(state = initialState, action) {
           ...state.characters,
           isLoading: false,
           items: action.characters
+        }
+      };
+    case LOAD_CHARACTER.REQUEST:
+      return {
+        ...state,
+        character: {
+          ...state.character,
+          isModalOpen: true,
+          current: action.payload
+        }
+      };
+    case CLOSE_CHARACTER_DETAILS:
+      return {
+        ...state,
+        character: {
+          ...state.character,
+          isModalOpen: false
         }
       };
     default:

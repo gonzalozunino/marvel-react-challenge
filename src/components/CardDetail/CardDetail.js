@@ -3,7 +3,7 @@ import moment from "moment";
 
 import { Card as CardUI, Image } from "semantic-ui-react";
 
-import "./Card.css";
+import "./CardDetail.css";
 
 const CardDetail = ({ char: { name, thumbnail, description, urls, modified } }) => {
   const imgSrc = `${thumbnail.path}/standard_large.${thumbnail.extension}`;

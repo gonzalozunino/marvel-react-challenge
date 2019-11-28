@@ -5,13 +5,14 @@ import { Card as CardUI, Image, Segment, Icon } from "semantic-ui-react";
 import "./Card.css";
 
 const Card = ({
-  char: { name, thumbnail, comics, series, events, stories }
+  char: { name, thumbnail, comics, series, events, stories },
+  onClick
 }) => {
   const imgSrc = `${thumbnail.path}/standard_large.${thumbnail.extension}`;
 
   return (
     <div className="card">
-      <CardUI>
+      <CardUI onClick={onClick}>
         <Image
           className="card-image"
           src={imgSrc}

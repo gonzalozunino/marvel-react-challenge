@@ -1,8 +1,8 @@
-import { LOAD_CHARACTERS } from "./actionTypes";
+import { LOAD_CHARACTERS, LOAD_CHARACTER, CLOSE_CHARACTER_DETAILS } from "./actionTypes";
 
 import ApiService from "../api/api.service";
 
-async function fetchData(options) {
+async function fetchChars(options) {
   const res = await ApiService().getCharacters(options);
 
   return res.json();
@@ -15,7 +15,7 @@ export const loadCharacters = page => {
     });
 
     try {
-      const response = await fetchData({
+      const response = await fetchChars({
         page: page,
         count: 12
       });
@@ -32,3 +32,12 @@ export const loadCharacters = page => {
     }
   };
 };
+
+export const loadCharacterById = character => ({
+  type: LOAD_CHARACTER.REQUEST,
+  payload: character
+});
+
+export const closeCharacterDetails = () => ({
+  type: CLOSE_CHARACTER_DETAILS
+});

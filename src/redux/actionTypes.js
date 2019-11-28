@@ -11,3 +11,5 @@ const makeActionTypes = base => {
 };
 
 export const LOAD_CHARACTERS = makeActionTypes("LOAD_CHARACTERS");
+export const LOAD_CHARACTER = makeActionTypes("LOAD_CHARACTER");
+export const CLOSE_CHARACTER_DETAILS = "CLOSE_CHARACTER_DETAILS";
