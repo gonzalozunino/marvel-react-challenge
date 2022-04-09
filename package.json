@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "crypto-js": "^3.1.9-1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-infinite-scroller": "^1.2.4",
